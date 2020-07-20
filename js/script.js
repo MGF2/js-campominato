@@ -38,15 +38,24 @@ while ( sceltaR.length < 5 ) {
   var presente = sceltaR.includes(scelta);
   if ( presente == true ) {
     console.log("Numero già inserito, scegline un altro");
-  } else {
+  } else if ( isNaN(scelta) ) {
+    console.log("Non è un numero, inserisci un numero");
+  } else if ( (scelta < 1) || (scelta > 100) ) {
+    console.log("Scegli un numero tra 1 e 100");
+  }
+    //Se superati i controlli, scelta inserita nella lista
+    else {
     sceltaR.push(scelta);
+    //Confronto - se la scelta non è presente nella lista
     if ( (numeri.includes(scelta) == false) && (sceltaR.length < 5) ) {
       console.log( sceltaR.length + " " + "Salvo! Puoi continuare");
-    } else if (numeri.includes(scelta) == true) {
-      console.log( scelta + " " + "Bomba! Hai perso");
+    } //Se la scelta è presente nella lista - Hai perso
+      else if (numeri.includes(scelta) == true) {
+      console.log( sceltaR.length + " " + "Bomba! Hai perso");
       break;
-    } else {
-      console.log("Hai vinto!");
+    } //Se la scelta non coincide con nessuna bomba - Hai vinto
+      else {
+      console.log( sceltaR.length + " " + "Hai vinto!");
     }
   }
   i++;
