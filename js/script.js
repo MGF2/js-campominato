@@ -31,7 +31,7 @@ console.log(numeri);
 //Lista vuota numeri giocatore
 var sceltaR = [];
 
-while ( sceltaR.length < 5 ) {
+while ( sceltaR.length < 84 ) {
   //Scelta numeri giocatore
   var scelta = parseInt(prompt("Scegli un numero"));
   //Controllo lista numeri
@@ -47,15 +47,15 @@ while ( sceltaR.length < 5 ) {
     else {
     sceltaR.push(scelta);
     //Confronto - se la scelta non è presente nella lista
-    if ( (numeri.includes(scelta) == false) && (sceltaR.length < 5) ) {
-      console.log( sceltaR.length + " " + "Salvo! Puoi continuare");
+    if ( (numeri.includes(scelta) == false) && (sceltaR.length < 84) ) {
+      console.log("Punti: " + sceltaR.length + " " + "Salvo! Puoi continuare");
     } //Se la scelta è presente nella lista - Hai perso
       else if (numeri.includes(scelta) == true) {
-      console.log( sceltaR.length + " " + "Bomba! Hai perso");
+      console.log("Punti: " + sceltaR.length + " " + "Bomba! Hai perso");
       break;
     } //Se la scelta non coincide con nessuna bomba - Hai vinto
       else {
-      console.log( sceltaR.length + " " + "Hai vinto!");
+      console.log("Punti: " + sceltaR.length + " " + "Hai vinto!");
     }
   }
   i++;
