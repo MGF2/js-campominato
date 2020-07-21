@@ -12,10 +12,8 @@
 // con difficoltà 2 => tra 1 e 50
 
 
-//BONUS
+//BONUS DIFFICOLTA
 var difficolta = parseInt(prompt("Scegli il livello di difficoltà '0,1,2'"));
-
-
 
 
 switch (difficolta) {
@@ -35,17 +33,17 @@ switch (difficolta) {
 
 //Lista vuota per numeri pc
 var numeri = [];
-var randomnum;
+var randomNum;
 var i = 0;
 
 
 //Scelta numeri "bomba" pc
 while (numeri.length < 16) {
-  var randomnum = random(1,massimo);
-  var presente = numeri.includes(randomnum);
+  var randomNum = random(1,massimo);
+  var presente = numeri.includes(randomNum);
   //Se il numero random è unico push nella stringa vuota
   if (presente == false ) {
-    numeri.push(randomnum);
+    numeri.push(randomNum);
   }
 }
 console.log(numeri);
@@ -69,7 +67,7 @@ while ( (sceltaR.length < range) && (trovato == false) ) {
   } //Se superati i controlli, scelta inserita nella lista
     else {
     sceltaR.push(scelta);
-    //Confronto - se la scelta non è presente nella lista
+    //Confronto - se la scelta non è presente nella lista - Continua
     if ( (numeri.includes(scelta) == false) && (sceltaR.length < range) ) {
       console.log("Punti: " + sceltaR.length + " " + "Salvo! Puoi continuare");
     } //Se la scelta è presente nella lista - Hai perso
